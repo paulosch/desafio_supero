@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   position: relative;
-  margin-top: 30px;
-  padding-top: 15px;
+  margin: 30px 0;
+  padding: 15px 0;
   background: #fff;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
