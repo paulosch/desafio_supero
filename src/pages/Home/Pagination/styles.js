@@ -15,6 +15,6 @@ export const PageButton = styled.button`
   justify-content: center;
   margin: 0 2px;
   border: none;
-  background: #fff;
-  color: #555;
+  background: ${(props) => (props.active ? '#1218a9' : '#fff')};
+  color: ${(props) => (props.active ? '#fff' : '#1218a9')};
 `;

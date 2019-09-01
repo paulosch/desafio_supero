@@ -9,7 +9,7 @@ import './config/ReactotronConfig';
 import store from './store';
 
 import GlobalStyle from './styles/global';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

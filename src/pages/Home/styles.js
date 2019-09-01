@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 15px 30px;
+  padding: 15px 0;
 `;
 
 export const Centro = styled.div`
@@ -12,37 +12,40 @@ export const Centro = styled.div`
 `;
 
 export const Item = styled.li`
-  width: 25%;
-  border-radius: 3px;
-  margin: 15px;
-  background: #fff;
-
-  &:nth-of-type(1n) {
-    margin-left: 0px;
-  }
-
-  &:nth-of-type(4n) {
-    margin-right: 0px;
-  }
-
   a {
     display: flex;
     color: inherit;
+    border-radius: 3px;
+    margin: 15px 0;
+    background: #fff;
+    height: 200px;
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
+  width: 40%;
+  height: 200px;
   border-radius: 3px 0 0 3px;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
 export const Informations = styled.div`
+  width: 60%;
   display: flex;
   flex-direction: column;
   padding: 5px;
 
   span {
-    margin-top: 8px;
+    margin-top: 2px;
     color: #797979;
+    font-size: 12px;
+  }
+
+  small {
+    font-size: 10px;
   }
 `;
 

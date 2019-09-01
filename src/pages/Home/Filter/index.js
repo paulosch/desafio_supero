@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container } from './styles';
 
@@ -16,5 +17,9 @@ const Filter = ({ totalItems }) => (
     </div>
   </Container>
 );
+
+Filter.propTypes = {
+  totalItems: PropTypes.number.isRequired,
+};
 
 export default Filter;
