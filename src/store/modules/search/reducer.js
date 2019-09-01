@@ -1,6 +1,5 @@
 const INITIAL_STATE = {
   data: null,
-  book: null,
   error: false,
   loading: false,
   textSearch: '',

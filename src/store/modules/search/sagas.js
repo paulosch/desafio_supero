@@ -16,6 +16,7 @@ export function* search({ payload }) {
     const startIndex = (page - 1) * itemsPerPage;
 
     const params = `?q=${text}&startIndex=${startIndex}&maxResults=${itemsPerPage}`;
+    console.tron.log(params);
     const response = yield call(api.get, params);
     const { data } = response;
 

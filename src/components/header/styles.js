@@ -15,6 +15,7 @@ export const Logo = styled.img`
 
 export const BookTitle = styled.h2`
   font-size: 32px;
+  font-weight: bolder;
   color: white;
   width: 100%;
   text-align: center;

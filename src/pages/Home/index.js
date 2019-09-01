@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import DefaultLayout from '../_layouts/default';
 
@@ -19,13 +20,13 @@ const Home = () => {
   } = useSelector((state) => state.search);
 
   const renderList = () => {
-    if (data) {
+    if (data && data.items) {
       return (
         <div>
           <ul className="row">
             {data.items.map((book) => (
               <Item key={book.id} className="col-md-4 col-12">
-                <a href="/details">
+                <Link to={{ pathname: '/details', book }}>
                   <Image
                     src={
                       book.volumeInfo.imageLinks
@@ -35,7 +36,11 @@ const Home = () => {
                     Alt={book.volumeInfo.title}
                   />
                   <Informations>
-                    <Title>{book.volumeInfo.title}</Title>
+                    <Title>
+                      {book.volumeInfo.title.length > 70
+                        ? `${book.volumeInfo.title.substring(0, 70)}...`
+                        : book.volumeInfo.title}
+                    </Title>
                     <small>
                       {`(${
                         book.volumeInfo.industryIdentifiers
@@ -55,7 +60,7 @@ const Home = () => {
                         : ''}
                     </span>
                   </Informations>
-                </a>
+                </Link>
               </Item>
             ))}
           </ul>
@@ -78,7 +83,7 @@ const Home = () => {
     if (error) {
       return (
         <Centro>
-          <strong>Algo deu errado na sua pesquisa, tente novamente em aluns minutos</strong>
+          <strong>Algo deu errado na sua pesquisa, tente novamente em alguns minutos</strong>
         </Centro>
       );
     }

@@ -22,6 +22,7 @@ const Pagination = () => {
   }
 
   const setPage = (pageNumber) => {
+    console.tron.log(pageNumber);
     dispatch(searchRequest(textSearch, pageNumber));
   };
 
@@ -37,12 +38,16 @@ const Pagination = () => {
           || number === total
           || (number >= page - 3 && number <= page + 3)
         ) {
+          const isShowMore = (number === total - 1 && number - 1 > page + 3)
+            || (number === 2 && number + 1 < page - 3);
+
+          if (isShowMore) {
+            return <PageButton>...</PageButton>;
+          }
+
           return (
             <PageButton active={number === page} onClick={() => setPage(number)}>
-              {(number === total - 1 && number - 1 > page + 3)
-              || (number === 2 && number + 1 < page - 3)
-                ? '...'
-                : number}
+              {number}
             </PageButton>
           );
         }
