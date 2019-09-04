@@ -2,10 +2,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 30px;
   background: rgba(100%, 100%, 100%, 20%);
+
+  .row {
+    align-items: center;
+    padding: 30px 0;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+
+      div {
+        text-align: center;
+      }
+
+      img {
+        margin-bottom: 10px;
+      }
+    }
+  }
 `;
 
 export const Logo = styled.img`

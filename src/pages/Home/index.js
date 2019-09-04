@@ -25,7 +25,7 @@ const Home = () => {
         <div>
           <ul className="row">
             {data.items.map((book) => (
-              <Item key={book.id} className="col-md-4 col-12">
+              <Item key={book.id} className="col-md-6 col-lg-4 col-12">
                 <Link to={{ pathname: '/details', book }}>
                   <Image
                     src={
@@ -94,11 +94,8 @@ const Home = () => {
   return (
     <DefaultLayout>
       <Header />
-      <Container className="container">
-        <Filter totalItems={totalItems} />
-
-        {renderContent()}
-      </Container>
+      <Filter totalItems={totalItems} />
+      <Container className="container">{renderContent()}</Container>
     </DefaultLayout>
   );
 };

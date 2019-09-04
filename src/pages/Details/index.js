@@ -48,17 +48,15 @@ const Details = ({ location }) => {
               ''
             )}
           </Informations>
-        </div>
 
-        <div className="row">
           <div className="col-12">
             <Description>{book.volumeInfo.description}</Description>
           </div>
-        </div>
 
-        <CloseButton to="/">
-          <img src={Close} alt="Close" />
-        </CloseButton>
+          <CloseButton to="/">
+            <img src={Close} alt="Close" />
+          </CloseButton>
+        </div>
       </Container>
     </BookLayout>
   );

@@ -7,8 +7,16 @@ import { Container, Logo, BookTitle } from './styles';
 
 const Header = ({ title }) => (
   <Container>
-    <Logo src={logo} />
-    {!title ? <SearchBox /> : <BookTitle>{title}</BookTitle>}
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 col-lg-4">
+          <Logo src={logo} />
+        </div>
+        <div className="col-md-12 col-lg-8">
+          {!title ? <SearchBox /> : <BookTitle>{title}</BookTitle>}
+        </div>
+      </div>
+    </div>
   </Container>
 );
 

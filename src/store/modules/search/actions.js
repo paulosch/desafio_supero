@@ -18,3 +18,10 @@ export function searchFailure(err) {
     payload: { err },
   };
 }
+
+export function alterType(type) {
+  return {
+    type: '@search/ALTER_SEARCH_TYPE',
+    payload: { type },
+  };
+}

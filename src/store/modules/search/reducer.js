@@ -3,9 +3,10 @@ const INITIAL_STATE = {
   error: false,
   loading: false,
   textSearch: '',
-  itemsPerPage: 21,
+  itemsPerPage: 18,
   page: 1,
   totalItems: 0,
+  type: null,
 };
 
 export default function search(state = INITIAL_STATE, action) {
@@ -27,6 +28,8 @@ export default function search(state = INITIAL_STATE, action) {
       };
     case '@search/SEARCH_FAILURE':
       return { ...state, error: true, loading: false };
+    case '@search/ALTER_SEARCH_TYPE':
+      return { ...state, type: action.payload.type };
     default:
       return state;
   }

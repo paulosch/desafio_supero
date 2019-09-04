@@ -7,16 +7,18 @@ import { Container, Content, Button } from './styles';
 import search from '../../assets/images/search.png';
 
 const SearchBox = () => {
-  const [textSearch, handleChange] = useState('');
   const dispatch = useDispatch();
+  const [textSearch, handleChange] = useState('');
+
+  const request = () => dispatch(searchRequest(textSearch, 1));
 
   const handleSearch = () => {
-    dispatch(searchRequest(textSearch, 1));
+    request();
   };
 
   const handleKeyUp = (e) => {
     if (e.key === 'Enter') {
-      dispatch(searchRequest(textSearch, 1));
+      request();
     }
   };
 
