@@ -1,9 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  padding: 15px 0;
-`;
+export const Container = styled.div``;
 
 export const Centro = styled.div`
   margin-top: 50px;
@@ -39,7 +37,7 @@ export const Informations = styled.div`
   padding: 5px;
 
   span {
-    margin-top: 2px;
+    margin-top: 8px;
     color: #797979;
     font-size: 12px;
   }
