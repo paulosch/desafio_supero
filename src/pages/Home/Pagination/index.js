@@ -22,7 +22,6 @@ const Pagination = () => {
   }
 
   const setPage = (pageNumber) => {
-    console.tron.log(pageNumber);
     dispatch(searchRequest(textSearch, pageNumber));
   };
 
